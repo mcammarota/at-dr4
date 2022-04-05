@@ -1,0 +1,72 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background-color: aquamarine;
+  font-size: 18px;
+}
+
+.container {
+  background-color: rgb(3, 8, 10);
+  width: 400px;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+.tarefa-list {
+  margin: 10px 0 0 10px;
+  padding: 10px;
+  height: 300px;
+  overflow: auto;
+}
+
+.tarefa-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tarefa-item + .tarefa-item {
+  margin-top: 5px;
+  border-top: 1px solid white;
+  padding-top: 5px;
+}
+
+.new-item {
+  display: flex;
+  margin: 0;
+  justify-content: space-between;
+}
+
+nav {
+  display: flex;
+  margin: 0;
+  justify-content: space-around;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+h1, h3 {
+  text-align: center;
+}
+
+input {
+  width: 250px;
+  height: 20px;
+  margin-left: 20px;
+  margin-right: 40px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.adicionar {
+  background-color: green;
+}
+
+.excluir {
+  background-color: red;
+}
