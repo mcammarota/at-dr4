@@ -7,7 +7,7 @@
         <input v-model="cliente" type="text" class="form-control">
         <br />
         <label for="Roupa">Roupa
-          <select v-model="roupa">
+          <select v-model="roupa" required>
               <option value="Camiseta">Camiseta</option>
               <option value="Regata">Regata</option>
               <option value="Casaco">Casaco</option>
@@ -16,10 +16,10 @@
         <br />
         <br />
         <label for="Quantidade">Quantidade</label>
-          <input v-model="quantidade" type="number" class="form-control">
+          <input v-model="quantidade" type="number" required class="form-control">
         <br />
         <label for="Descricao">Descrição</label>
-          <textarea v-model="descricao" type="text" class="form-control">
+          <textarea v-model="descricao" type="text" required class="form-control">
           </textarea>
         <br />
         <button @click="cadastrarPedido" class="btn btn-success">Salvar</button>
@@ -76,6 +76,22 @@ export default {
 
     methods: {
         cadastrarPedido() {
+          if(this.cliente.length <= 0) {
+            alert('Informe o nome do cliente!');
+            return;
+          }
+          if(this.quantidade == null) {
+            alert('Informe a quantidade!');
+            return;
+          }
+          if(this.roupa == null) {
+            alert('Informe a roupa!');
+            return;
+          }
+          if(this.quantidade > 10) {
+            alert('Não pode pedir mais de 10 peças iguais!')
+            return
+          }
             this.pedidos.push({
             cliente: this.cliente,
             roupa: this.roupa,
